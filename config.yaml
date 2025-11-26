@@ -1,0 +1,46 @@
+dataset:
+  active: "visa_trx"     # Dataset por defecto
+  filename: "trx2016.parquet"
+  description: "VISA consumer transactions dataset"
+
+paths:
+  root: "data/{dataset_active}/"
+  raw: "data/raw/{dataset_active}/"
+  processed: "data/processed/{dataset_active}/"
+  session_records: auto-completed
+  footprints: auto-completed
+  tensors_convolution: auto-completed
+
+preprocessing:
+  normalize: true
+  normalization_method: "l2"
+  drop_null_users: true
+  min_transactions_per_user: 5
+
+clustering:
+  algorithm: "kmeans"
+  n_clusters: 22
+  batch_size: 50000
+  max_iter: 300
+  tol: 0.0001
+  random_state: 42
+  n_init: 10
+
+tensor:
+  mode_names: ["user", "merchant", "time"]
+  shape:
+    users: null
+    merchants: null
+    time_bins: 12
+  decomposition:
+    method: "CP"
+    rank: 15
+
+logging:
+  level: "INFO"
+  save_logs: true
+  log_folder: "logs/"
+
+notebooks:
+  auto_reload: true
+  display_max_rows: 30

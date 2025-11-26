@@ -1,0 +1,27 @@
+[project]
+name = "consumer-3d-segmentation"
+version = "0.1.0"
+description = "Behavioural discovery and 3D tensor segmentation project"
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+
+dependencies = [
+    "ipykernel>=6.0",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "dask[dataframe]>=2024.1.0",
+    "dask[distributed]>=2024.1.0",
+    "dask-ml>=2023.3.24",
+    "scikit-learn>=1.4",
+    "pyarrow>=14.0",
+    "matplotlib>=3.7",
+    "tqdm",
+    "torch",
+]
+
+[tool.uv]
+# Directorio donde UV creará el entorno virtual
+venv = ".venv"
+src = ["src"]
+

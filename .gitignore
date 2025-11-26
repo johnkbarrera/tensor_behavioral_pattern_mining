@@ -1,0 +1,48 @@
+# ----------------------------------------
+# 1. Empty /data Directory (Crucial)
+# ----------------------------------------
+
+# Ignore everything inside the data directory
+/data/*
+
+# EXCEPTION: Re-include the directory itself and a placeholder file
+# The .gitkeep file is a standard practice to keep an otherwise empty directory tracked by Git.
+!/data/.gitkeep
+!/data/
+
+# ----------------------------------------
+# 2. Virtual Environment and Python Artifacts
+# ----------------------------------------
+
+# uv Virtual Environment
+.venv/
+
+# Python compiled files and cache
+__pycache__/
+*.pyc
+*.cpython-*.pyc
+
+# uv cache
+.uv-cache/
+
+# pytest cache
+.pytest_cache/
+
+# ----------------------------------------
+# 3. Notebooks and Logs
+# ----------------------------------------
+
+# Jupyter/IPython Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Log and temporary files
+*.log
+*.temp
+*.tmp
+
+# ----------------------------------------
+# 4. System and OS Files
+# ----------------------------------------
+
+# macOS temporary files
+.DS_Store
