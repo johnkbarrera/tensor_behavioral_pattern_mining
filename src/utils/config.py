@@ -31,9 +31,30 @@ def load_config(base_dir):
     config_data = replace_label(config_data, "dataset_active", dataset_active)
 
     # New Paths
-    config_data["paths"]["session_records"] = f"{config_data["paths"]["raw"]}{file_name}"
-    config_data["paths"]["footprints"] = f"{config_data["paths"]["processed"]}footprints.csv"
-    config_data["paths"]["tensors_convolution"] = f"{config_data["paths"]["processed"]}tensors_convolution.csv"
+    config_data["paths"][
+        "session_records"
+    ] = f"{config_data["paths"]["raw"]}{file_name}"
+
+    # Footprints
+    config_data["paths"][
+        "footprints"
+    ] = f"{config_data["paths"]["processed"]}footprints.csv"
+    config_data["paths"][
+        "tensors_convolution"
+    ] = f"{config_data["paths"]["processed"]}tensors_convolution.csv"
+
+    # Mathematical embedding
+    config_data["paths"][
+        "tensors_svd"
+    ] = f"{config_data["paths"]["processed"]}tensors_svd.csv"
+
+    # Normalization
+    config_data["paths"][
+        "tensors_normalized_L1"
+    ] = f"{config_data["paths"]["processed"]}tensors_normalized_L1.csv"
+    config_data["paths"][
+        "tensors_normalized_L2"
+    ] = f"{config_data["paths"]["processed"]}tensors_normalized_L2.csv"
 
     for key, value in config_data["paths"].items():
         config_data["paths"][key] = f"{base_dir}/{value}"
