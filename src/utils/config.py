@@ -46,15 +46,32 @@ def load_config(base_dir):
     # Mathematical embedding
     config_data["paths"][
         "tensors_svd"
-    ] = f"{config_data["paths"]["processed"]}tensors_svd.csv"
+    ] = f"{config_data["paths"]["processed"]}tensors_svd"
+    config_data["paths"][
+        "tensors_pca"
+    ] = f"{config_data["paths"]["processed"]}tensors_pca"
 
     # Normalization
     config_data["paths"][
+        "tensors_normalized_01"
+    ] = f"{config_data["paths"]["processed"]}tensors_normalized_01"
+    config_data["paths"][
         "tensors_normalized_L1"
-    ] = f"{config_data["paths"]["processed"]}tensors_normalized_L1.csv"
+    ] = f"{config_data["paths"]["processed"]}tensors_normalized_L1"
     config_data["paths"][
         "tensors_normalized_L2"
-    ] = f"{config_data["paths"]["processed"]}tensors_normalized_L2.csv"
+    ] = f"{config_data["paths"]["processed"]}tensors_normalized_L2"
+
+    # Cluster
+    config_data["paths"][
+        "cluster_labels"
+    ] = f"{config_data["paths"]["processed"]}cluster_labels"
+    config_data["paths"][
+        "cluster_centroids"
+    ] = f"{config_data["paths"]["processed"]}cluster_centroids.csv"
+    config_data["paths"][
+        "cluster_representations"
+    ] = f"{config_data["paths"]["processed"]}cluster_representations.csv"
 
     for key, value in config_data["paths"].items():
         config_data["paths"][key] = f"{base_dir}/{value}"

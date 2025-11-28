@@ -1,6 +1,7 @@
 dataset:
   active: "visa_trx"     # Dataset por defecto
-  filename: "trx2016.parquet"
+  # filename: "trx2016.parquet"
+  filename: "trx_cured.parquet"
   description: "VISA consumer transactions dataset"
 
 paths:
@@ -11,8 +12,13 @@ paths:
   footprints: auto-completed
   tensors_convolution: auto-completed
   tensors_svd: auto-completed
+  tensors_pca: auto-completed
+  tensors_normalized_01: auto-completed
   tensors_normalized_L1: auto-completed
   tensors_normalized_L2: auto-completed
+  cluster_labels: auto-completed
+  cluster_centroids: auto-completed
+  cluster_representations: auto-completed
 
 preprocessing:
   normalize: true
